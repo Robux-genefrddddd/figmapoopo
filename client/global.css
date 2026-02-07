@@ -110,7 +110,7 @@
   }
 
   h3 {
-    @apply text-xl sm:text-2xl font-500;
+    @apply text-xl sm:text-2xl font-medium;
   }
 
   p, span, li, a, button, label, td, th {
