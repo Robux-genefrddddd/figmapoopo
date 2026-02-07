@@ -1,8 +1,28 @@
-import { ArrowUpRight } from "lucide-react";
-import { useState } from "react";
+import { ArrowUpRight, Moon, Sun } from "lucide-react";
+import { useState, useEffect } from "react";
 
 export default function Index() {
   const [hoveredProject, setHoveredProject] = useState<number | null>(null);
+  const [isDark, setIsDark] = useState(false);
+
+  useEffect(() => {
+    // Check if dark mode is enabled
+    const isDarkMode = document.documentElement.classList.contains("dark");
+    setIsDark(isDarkMode);
+  }, []);
+
+  const toggleDarkMode = () => {
+    const html = document.documentElement;
+    if (html.classList.contains("dark")) {
+      html.classList.remove("dark");
+      setIsDark(false);
+      localStorage.setItem("theme", "light");
+    } else {
+      html.classList.add("dark");
+      setIsDark(true);
+      localStorage.setItem("theme", "dark");
+    }
+  };
 
   const projects = [
     {
