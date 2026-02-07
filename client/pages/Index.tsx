@@ -24,11 +24,22 @@ import { Label } from "@/components/ui/label";
 export default function Index() {
   const [hoveredProject, setHoveredProject] = useState<number | null>(null);
   const [isDark, setIsDark] = useState(false);
+  const [isProfileDialogOpen, setIsProfileDialogOpen] = useState(false);
+  const [name, setName] = useState("Your Name");
+  const [username, setUsername] = useState("@yourname");
+  const [tempName, setTempName] = useState(name);
+  const [tempUsername, setTempUsername] = useState(username);
 
   useEffect(() => {
     // Check if dark mode is enabled
     const isDarkMode = document.documentElement.classList.contains("dark");
     setIsDark(isDarkMode);
+
+    // Load profile from localStorage
+    const savedName = localStorage.getItem("userProfileName");
+    const savedUsername = localStorage.getItem("userProfileUsername");
+    if (savedName) setName(savedName);
+    if (savedUsername) setUsername(savedUsername);
   }, []);
 
   const toggleDarkMode = () => {
@@ -42,6 +53,20 @@ export default function Index() {
       setIsDark(true);
       localStorage.setItem("theme", "dark");
     }
+  };
+
+  const handleOpenProfileDialog = () => {
+    setTempName(name);
+    setTempUsername(username);
+    setIsProfileDialogOpen(true);
+  };
+
+  const handleSaveProfile = () => {
+    setName(tempName);
+    setUsername(tempUsername);
+    localStorage.setItem("userProfileName", tempName);
+    localStorage.setItem("userProfileUsername", tempUsername);
+    setIsProfileDialogOpen(false);
   };
 
   const projects = [
