@@ -9,6 +9,7 @@ export default function Recents() {
   const [viewMode, setViewMode] = useState<"grid" | "list">("grid");
   const [selectedOrg, setSelectedOrg] = useState("all");
   const [activeTab, setActiveTab] = useState<"recent" | "shared-files" | "shared-projects">("recent");
+  const [showOrgDropdown, setShowOrgDropdown] = useState(false);
 
   const filteredFiles = selectedOrg === "all" 
     ? mockFiles 
