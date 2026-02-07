@@ -74,6 +74,17 @@ export default function Index() {
             >
               About
             </a>
+            <button
+              onClick={toggleDarkMode}
+              className="p-2 rounded-lg bg-secondary hover:bg-muted transition-colors duration-300"
+              aria-label="Toggle dark mode"
+            >
+              {isDark ? (
+                <Sun className="w-4 h-4" />
+              ) : (
+                <Moon className="w-4 h-4" />
+              )}
+            </button>
             <button className="px-5 py-2 rounded-lg bg-foreground text-background text-sm font-medium hover:opacity-90 transition-opacity duration-300 shadow-soft">
               Contact
             </button>
