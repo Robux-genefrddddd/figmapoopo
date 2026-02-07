@@ -40,7 +40,9 @@ export function RecentsSidebar() {
         </div>
         <button className="w-full text-left px-3 py-2 rounded-lg text-sm text-foreground hover:bg-secondary transition-colors flex items-center justify-between">
           <span>Personal</span>
-          <span className="text-xs px-2 py-1 rounded bg-secondary text-muted-foreground">Free</span>
+          <span className="text-xs px-2 py-1 rounded bg-secondary text-muted-foreground">
+            Free
+          </span>
         </button>
       </div>
 
@@ -65,7 +67,9 @@ export function RecentsSidebar() {
       {/* Upgrade Promo */}
       <div className="p-3 border-b border-border">
         <div className="bg-secondary rounded-lg p-3 text-center">
-          <div className="text-xs font-medium text-foreground mb-1">Get more power</div>
+          <div className="text-xs font-medium text-foreground mb-1">
+            Get more power
+          </div>
           <p className="text-xs text-muted-foreground mb-3">
             Unlock more features with our Pro plan
           </p>

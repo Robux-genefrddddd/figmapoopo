@@ -57,15 +57,8 @@ const data = {
         "App.tsx",
       ],
     ],
-    [
-      "server",
-      ["routes", "demo.ts"],
-      "index.ts",
-    ],
-    [
-      "shared",
-      "api.ts",
-    ],
+    ["server", ["routes", "demo.ts"], "index.ts"],
+    ["shared", "api.ts"],
     "package.json",
     "tailwind.config.ts",
     "vite.config.ts",
@@ -115,10 +108,7 @@ export function AppSidebar({
       {/* User Profile Footer */}
       <SidebarFooter className="border-t border-border px-0 py-4">
         <div className="px-4 space-y-3">
-          <button
-            onClick={onEditProfile}
-            className="w-full group"
-          >
+          <button onClick={onEditProfile} className="w-full group">
             <div className="flex items-center gap-3 p-3 rounded-lg hover:bg-secondary transition-colors duration-300">
               <div className="w-10 h-10 rounded-full bg-gradient-to-br from-foreground to-muted flex items-center justify-center text-background font-medium text-sm flex-shrink-0">
                 {userName.charAt(0).toUpperCase()}

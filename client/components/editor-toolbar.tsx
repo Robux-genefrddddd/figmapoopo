@@ -10,7 +10,15 @@ import {
 } from "lucide-react";
 import { useState } from "react";
 
-type ToolType = "select" | "frame" | "shape" | "text" | "pen" | "image" | "hand" | "component";
+type ToolType =
+  | "select"
+  | "frame"
+  | "shape"
+  | "text"
+  | "pen"
+  | "image"
+  | "hand"
+  | "component";
 
 export function EditorToolbar() {
   const [activeTool, setActiveTool] = useState<ToolType>("select");
@@ -21,14 +29,54 @@ export function EditorToolbar() {
     icon: React.ReactNode;
     shortcut?: string;
   }> = [
-    { id: "select", label: "Select", icon: <MousePointer2 className="w-5 h-5" />, shortcut: "S" },
-    { id: "frame", label: "Frame", icon: <Square className="w-5 h-5" />, shortcut: "F" },
-    { id: "shape", label: "Shape", icon: <Circle className="w-5 h-5" />, shortcut: "U" },
-    { id: "text", label: "Text", icon: <Type className="w-5 h-5" />, shortcut: "T" },
-    { id: "pen", label: "Pen", icon: <Pen className="w-5 h-5" />, shortcut: "P" },
-    { id: "image", label: "Image", icon: <Image className="w-5 h-5" />, shortcut: "I" },
-    { id: "hand", label: "Hand", icon: <Hand className="w-5 h-5" />, shortcut: "H" },
-    { id: "component", label: "Component", icon: <Zap className="w-5 h-5" />, shortcut: "C" },
+    {
+      id: "select",
+      label: "Select",
+      icon: <MousePointer2 className="w-5 h-5" />,
+      shortcut: "S",
+    },
+    {
+      id: "frame",
+      label: "Frame",
+      icon: <Square className="w-5 h-5" />,
+      shortcut: "F",
+    },
+    {
+      id: "shape",
+      label: "Shape",
+      icon: <Circle className="w-5 h-5" />,
+      shortcut: "U",
+    },
+    {
+      id: "text",
+      label: "Text",
+      icon: <Type className="w-5 h-5" />,
+      shortcut: "T",
+    },
+    {
+      id: "pen",
+      label: "Pen",
+      icon: <Pen className="w-5 h-5" />,
+      shortcut: "P",
+    },
+    {
+      id: "image",
+      label: "Image",
+      icon: <Image className="w-5 h-5" />,
+      shortcut: "I",
+    },
+    {
+      id: "hand",
+      label: "Hand",
+      icon: <Hand className="w-5 h-5" />,
+      shortcut: "H",
+    },
+    {
+      id: "component",
+      label: "Component",
+      icon: <Zap className="w-5 h-5" />,
+      shortcut: "C",
+    },
   ];
 
   return (

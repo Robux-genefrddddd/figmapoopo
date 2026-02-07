@@ -7,9 +7,15 @@ interface EditorLeftPanelProps {
   layers: Array<{ id: string; name: string; type: string }>;
 }
 
-export function EditorLeftPanel({ fileName, pages, layers }: EditorLeftPanelProps) {
+export function EditorLeftPanel({
+  fileName,
+  pages,
+  layers,
+}: EditorLeftPanelProps) {
   const [activeTab, setActiveTab] = useState<"layers" | "assets">("layers");
-  const [expandedPages, setExpandedPages] = useState<Set<string>>(new Set(pages.map(p => p.id)));
+  const [expandedPages, setExpandedPages] = useState<Set<string>>(
+    new Set(pages.map((p) => p.id)),
+  );
 
   return (
     <div className="w-72 border-r border-border bg-background flex flex-col h-screen">
@@ -17,7 +23,9 @@ export function EditorLeftPanel({ fileName, pages, layers }: EditorLeftPanelProp
       <div className="p-4 border-b border-border">
         <div className="flex items-center gap-2 mb-2">
           <File className="w-4 h-4 text-muted-foreground" />
-          <span className="text-sm font-medium text-foreground">{fileName}</span>
+          <span className="text-sm font-medium text-foreground">
+            {fileName}
+          </span>
           <span className="text-xs px-2 py-0.5 rounded bg-secondary text-muted-foreground ml-auto">
             Drafts
           </span>

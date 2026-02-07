@@ -2,7 +2,9 @@ import { ChevronDown, Download } from "lucide-react";
 import { useState } from "react";
 
 export function EditorRightPanel() {
-  const [activeTab, setActiveTab] = useState<"design" | "prototype" | "inspect">("design");
+  const [activeTab, setActiveTab] = useState<
+    "design" | "prototype" | "inspect"
+  >("design");
 
   return (
     <div className="w-72 border-l border-border bg-background flex flex-col h-screen">
@@ -49,7 +51,9 @@ export function EditorRightPanel() {
             {/* Page Section */}
             <div>
               <button className="flex items-center justify-between w-full p-2 rounded hover:bg-secondary transition-colors">
-                <span className="text-sm font-medium text-foreground">Page</span>
+                <span className="text-sm font-medium text-foreground">
+                  Page
+                </span>
                 <ChevronDown className="w-4 h-4 text-muted-foreground" />
               </button>
               <div className="mt-2 p-3 rounded-lg bg-secondary text-xs text-muted-foreground">
@@ -60,7 +64,9 @@ export function EditorRightPanel() {
             {/* Styles Section */}
             <div>
               <button className="flex items-center justify-between w-full p-2 rounded hover:bg-secondary transition-colors">
-                <span className="text-sm font-medium text-foreground">Styles</span>
+                <span className="text-sm font-medium text-foreground">
+                  Styles
+                </span>
                 <ChevronDown className="w-4 h-4 text-muted-foreground" />
               </button>
               <div className="mt-2 p-3 rounded-lg bg-secondary text-xs text-muted-foreground">
@@ -71,7 +77,9 @@ export function EditorRightPanel() {
             {/* Export Section */}
             <div>
               <button className="flex items-center justify-between w-full p-2 rounded hover:bg-secondary transition-colors">
-                <span className="text-sm font-medium text-foreground">Export</span>
+                <span className="text-sm font-medium text-foreground">
+                  Export
+                </span>
                 <ChevronDown className="w-4 h-4 text-muted-foreground" />
               </button>
               <div className="mt-2 space-y-2">

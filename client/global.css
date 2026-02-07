@@ -96,7 +96,12 @@
     @apply bg-background text-foreground font-sans;
   }
 
-  h1, h2, h3, h4, h5, h6 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     @apply font-sans;
     letter-spacing: -0.02em;
   }
@@ -113,7 +118,14 @@
     @apply text-xl sm:text-2xl font-medium;
   }
 
-  p, span, li, a, button, label, td, th {
+  p,
+  span,
+  li,
+  a,
+  button,
+  label,
+  td,
+  th {
     overflow-wrap: anywhere;
     word-break: break-word;
   }

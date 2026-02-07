@@ -10,7 +10,7 @@ export default function Editor() {
   const navigate = useNavigate();
 
   // Get file data
-  const file = fileId ? mockFiles.find(f => f.id === fileId) : undefined;
+  const file = fileId ? mockFiles.find((f) => f.id === fileId) : undefined;
   const editorData = mockEditorFile;
 
   return (
@@ -25,10 +25,16 @@ export default function Editor() {
           <ArrowLeft className="w-5 h-5" />
         </button>
         <div className="w-8 h-px bg-border" />
-        <button className="p-3 rounded-lg text-muted-foreground hover:text-foreground hover:bg-secondary transition-colors" title="File">
+        <button
+          className="p-3 rounded-lg text-muted-foreground hover:text-foreground hover:bg-secondary transition-colors"
+          title="File"
+        >
           <File className="w-5 h-5" />
         </button>
-        <button className="p-3 rounded-lg text-muted-foreground hover:text-foreground hover:bg-secondary transition-colors" title="Assets">
+        <button
+          className="p-3 rounded-lg text-muted-foreground hover:text-foreground hover:bg-secondary transition-colors"
+          title="Assets"
+        >
           <Menu className="w-5 h-5" />
         </button>
       </div>
@@ -75,13 +81,16 @@ export default function Editor() {
         {/* Canvas Area */}
         <div className="flex-1 relative overflow-auto flex items-center justify-center">
           {/* Canvas with subtle grid */}
-          <div className="w-full h-full relative" style={{
-            backgroundImage: `
+          <div
+            className="w-full h-full relative"
+            style={{
+              backgroundImage: `
               linear-gradient(0deg, transparent 24%, rgba(255, 255, 255, 0.02) 25%, rgba(255, 255, 255, 0.02) 26%, transparent 27%, transparent 74%, rgba(255, 255, 255, 0.02) 75%, rgba(255, 255, 255, 0.02) 76%, transparent 77%, transparent),
               linear-gradient(90deg, transparent 24%, rgba(255, 255, 255, 0.02) 25%, rgba(255, 255, 255, 0.02) 26%, transparent 27%, transparent 74%, rgba(255, 255, 255, 0.02) 75%, rgba(255, 255, 255, 0.02) 76%, transparent 77%, transparent)
             `,
-            backgroundSize: '50px 50px',
-          }}>
+              backgroundSize: "50px 50px",
+            }}
+          >
             {/* Drop Zone */}
             <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
               <div className="text-center space-y-2">

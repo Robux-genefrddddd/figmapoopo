@@ -8,12 +8,15 @@ export default function Recents() {
   const navigate = useNavigate();
   const [viewMode, setViewMode] = useState<"grid" | "list">("grid");
   const [selectedOrg, setSelectedOrg] = useState("all");
-  const [activeTab, setActiveTab] = useState<"recent" | "shared-files" | "shared-projects">("recent");
+  const [activeTab, setActiveTab] = useState<
+    "recent" | "shared-files" | "shared-projects"
+  >("recent");
   const [showOrgDropdown, setShowOrgDropdown] = useState(false);
 
-  const filteredFiles = selectedOrg === "all" 
-    ? mockFiles 
-    : mockFiles.filter(f => f.organization === selectedOrg);
+  const filteredFiles =
+    selectedOrg === "all"
+      ? mockFiles
+      : mockFiles.filter((f) => f.organization === selectedOrg);
 
   const handleFileClick = (fileId: string) => {
     navigate(`/editor/${fileId}`);
@@ -29,7 +32,9 @@ export default function Recents() {
         {/* Create Banner */}
         <div className="border-b border-border bg-secondary/30 p-6">
           <div className="max-w-6xl mx-auto">
-            <h1 className="text-3xl font-light text-foreground mb-4">Recents</h1>
+            <h1 className="text-3xl font-light text-foreground mb-4">
+              Recents
+            </h1>
             <div className="flex gap-2">
               <input
                 type="text"
@@ -94,15 +99,21 @@ export default function Recents() {
                   {showOrgDropdown && (
                     <div className="absolute top-full left-0 mt-1 w-48 rounded-lg bg-card border border-border shadow-soft z-10">
                       <div
-                        onClick={() => { setSelectedOrg("all"); setShowOrgDropdown(false); }}
+                        onClick={() => {
+                          setSelectedOrg("all");
+                          setShowOrgDropdown(false);
+                        }}
                         className="block w-full text-left px-4 py-2 text-sm hover:bg-secondary cursor-pointer"
                       >
                         All Organizations
                       </div>
-                      {mockOrganizations.map(org => (
+                      {mockOrganizations.map((org) => (
                         <div
                           key={org.id}
-                          onClick={() => { setSelectedOrg(org.name); setShowOrgDropdown(false); }}
+                          onClick={() => {
+                            setSelectedOrg(org.name);
+                            setShowOrgDropdown(false);
+                          }}
                           className="block w-full text-left px-4 py-2 text-sm hover:bg-secondary cursor-pointer"
                         >
                           {org.icon} {org.name}
@@ -153,7 +164,7 @@ export default function Recents() {
                   <div className="aspect-video bg-gradient-to-br from-secondary to-background flex items-center justify-center text-5xl group-hover:scale-105 transition-transform">
                     {file.thumbnail}
                   </div>
-                  
+
                   {/* Info */}
                   <div className="p-4">
                     <h3 className="text-sm font-medium text-foreground mb-1 line-clamp-2">

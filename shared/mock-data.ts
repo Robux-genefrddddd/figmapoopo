@@ -1,6 +1,7 @@
 import type { FileItem, Organization, EditorFile, Page, Layer } from "./types";
 
-const daysAgo = (days: number) => new Date(Date.now() - days * 24 * 60 * 60 * 1000);
+const daysAgo = (days: number) =>
+  new Date(Date.now() - days * 24 * 60 * 60 * 1000);
 
 export const mockOrganizations: Organization[] = [
   {
@@ -141,7 +142,9 @@ export function getFileById(id: string): FileItem | undefined {
 }
 
 export function getRecentFiles(limit: number = 8): FileItem[] {
-  return mockFiles.sort((a, b) => b.lastEdited.getTime() - a.lastEdited.getTime()).slice(0, limit);
+  return mockFiles
+    .sort((a, b) => b.lastEdited.getTime() - a.lastEdited.getTime())
+    .slice(0, limit);
 }
 
 export function formatDate(date: Date): string {
