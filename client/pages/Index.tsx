@@ -103,8 +103,32 @@ export default function Index() {
   return (
     <>
       <Sidebar className="border-r border-border">
-        <SidebarHeader className="border-b border-border px-0">
-          <div className="flex items-center justify-between px-4 py-6">
+        <SidebarHeader className="border-b border-border px-0 space-y-4">
+          {/* Profile Section */}
+          <div className="px-4 pt-6 pb-4">
+            <button
+              onClick={handleOpenProfileDialog}
+              className="w-full group"
+            >
+              <div className="flex items-center gap-3 p-3 rounded-lg hover:bg-secondary transition-colors duration-300">
+                <div className="w-10 h-10 rounded-full bg-gradient-to-br from-foreground to-muted flex items-center justify-center text-white font-medium text-sm flex-shrink-0">
+                  {name.charAt(0).toUpperCase()}
+                </div>
+                <div className="flex-1 text-left">
+                  <p className="text-sm font-medium leading-tight text-foreground">
+                    {name}
+                  </p>
+                  <p className="text-xs text-muted-foreground leading-tight">
+                    {username}
+                  </p>
+                </div>
+                <Edit2 className="w-4 h-4 text-muted-foreground opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex-shrink-0" />
+              </div>
+            </button>
+          </div>
+
+          {/* Header */}
+          <div className="flex items-center justify-between px-4 pb-4">
             <span className="text-lg font-light tracking-tight">Portfolio</span>
             <button
               onClick={toggleDarkMode}
