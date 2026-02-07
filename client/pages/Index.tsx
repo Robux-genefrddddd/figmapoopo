@@ -1,4 +1,4 @@
-import { ArrowUpRight, Moon, Sun } from "lucide-react";
+import { ArrowUpRight, Moon, Sun, Edit2 } from "lucide-react";
 import { useState, useEffect } from "react";
 import {
   Sidebar,
@@ -9,6 +9,17 @@ import {
   SidebarInset,
   SidebarTrigger,
 } from "@/components/ui/sidebar";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogFooter,
+  DialogHeader,
+  DialogTitle,
+} from "@/components/ui/dialog";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
 
 export default function Index() {
   const [hoveredProject, setHoveredProject] = useState<number | null>(null);
